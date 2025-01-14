@@ -3,6 +3,8 @@ import { Redirect, Stack } from 'expo-router';
 
 import { useSession } from '../../ctx';
 
+import HeaderButtonMenu from '@/components/HeaderButtonMenu';
+
 export default function AppLayout() {
   const { session, isLoading } = useSession();
 
@@ -22,7 +24,7 @@ export default function AppLayout() {
   // This layout can be deferred because it's not the root layout.
   return (
     <Stack>
-        <Stack.Screen name="index" options={{ headerShown: false }} />
+        <Stack.Screen name="index" options={{headerShown: false}} />
     </Stack>
   )
 }
