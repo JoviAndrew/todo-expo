@@ -8,7 +8,15 @@ import { useSession } from '@/ctx';
 const HeaderMenu: React.FC = () => {
 	const { signOut } = useSession()
 	return (
-		<View style={{}}>
+		<View style={{
+			position: 'absolute',
+			top: 40,
+			zIndex: 100,
+			width: Dimensions.get('screen').width * 0.2,
+			backgroundColor: 'white',
+			padding: 10,
+			right: -10
+		}}>
 			{/* <TouchableOpacity><Text>Change Passkey</Text></TouchableOpacity> */}
 			<TouchableOpacity onPress={() => signOut()}><Text>Sign Out</Text></TouchableOpacity>
 		</View>
