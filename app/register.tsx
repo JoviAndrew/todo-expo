@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { View, Text, TextInput, TouchableOpacity } from 'react-native'
 import { router } from 'expo-router'
 import { useSession } from '@/ctx'
+import styles from '@/style/style'
 
 export default function register() {
 	const [pass, setPass] = useState('')
@@ -29,8 +30,8 @@ export default function register() {
 			<View style={{ marginBottom: 30 }}>
 				<Text style={{ fontSize: 40, fontWeight: '300' }}>register</Text>
 			</View>
-      <TextInput style={{borderBottomWidth: 2, marginBottom: 10, backgroundColor: 'rgba(255,255,255,0.3)', borderBottomColor: 'black'}} onChangeText={setPass} value={pass} placeholder='Password' secureTextEntry={true} autoCapitalize='none' />
-			<TextInput style={{borderBottomWidth: 2, marginBottom: 10, backgroundColor: 'rgba(255,255,255,0.3)', borderBottomColor: error ? 'red' : 'black'}} onChangeText={contValidPass} value={confirmPass} placeholder='Confirm Password' secureTextEntry={true} autoCapitalize='none' />
+      <TextInput style={styles.textInput} onChangeText={setPass} value={pass} placeholder='Password' secureTextEntry={true} autoCapitalize='none' />
+			<TextInput style={styles.textInput} onChangeText={contValidPass} value={confirmPass} placeholder='Confirm Password' secureTextEntry={true} autoCapitalize='none' />
 			<TouchableOpacity
 				onPress={() => {
 					userRegister()
