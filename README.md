@@ -13,6 +13,11 @@
    ```bash
     npx expo start
    ```
+
+3. Run the test
+   ```bash
+   npx expo test
+   ```
 ## Current and Future Plan
 |                |Current                        |Future                       |
 |----------------|-------------------------------|-----------------------------|
