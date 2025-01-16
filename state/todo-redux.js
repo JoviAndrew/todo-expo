@@ -14,10 +14,11 @@ export const todoSlice = createSlice({
 			state.data.splice(0,0,{...action.payload, isDone: false})
 		},
 		updateList: (state, action) => {
-			console.log('🚀 ~ action:', action)
+			// Update data from selected index
 			state.data[action.payload.index] = action.payload.data
 		},
 		deleteList: (state, action) => {
+			// Delete data from selected index
 			state.data.splice(action.payload.index, 1)
 		}
 	}
