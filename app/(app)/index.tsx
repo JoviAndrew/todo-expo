@@ -7,8 +7,15 @@ import AddTodoButton from '@/components/AddTodoButton';
 import { todoListData } from '../../state/todo-redux'
 import TodoList from '@/components/TodoList';
 
+type TodoProps = {
+	data: [{
+		description: string,
+		isDone: boolean
+	}]
+}
+
 export default function Index() {
-	const todoData = useSelector(todoListData)
+	const todoData = useSelector((state: { todo: TodoProps }) => state.todo)
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
@@ -17,7 +24,7 @@ export default function Index() {
 				<AddTodoButton />
 			</View>
 			<FlatList
-				data={todoData}
+				data={todoData?.data || []}
 				renderItem={({item, index}) => (
 					<TodoList data={item} index={index} />	
 				)}
