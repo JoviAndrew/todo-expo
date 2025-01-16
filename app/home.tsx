@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 import MainHeader from '@/components/MainHeader';
 import AddTodoButton from '@/components/AddTodoButton';
 
-import { todoListData } from '../../state/todo-redux'
+import { todoListData } from '../state/todo-redux'
 import TodoList from '@/components/TodoList';
 
 type TodoProps = {
