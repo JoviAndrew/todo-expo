@@ -13,13 +13,13 @@
    ```bash
     npx expo start
    ```
-## Features On App
+## Current and Future Plan
 |                |Current                        |Future                       |
 |----------------|-------------------------------|-----------------------------|
 |Authentication|Register can be done multiple times |Will be limited to one time            |
 |Connection          |Offline            |Offline           |
 |To do list content          |Description|Time, Priority, and Tags|
-|Special features         |none|Filters, sort,|
+|Special features         |none|Filters and sort|
 
 ## Test case coverage
 - Create task: (Mostly done. Lastly needed to check redux state if it has been added)
