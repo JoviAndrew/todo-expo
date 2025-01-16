@@ -20,7 +20,7 @@ const MainHeader: React.FC<Props> = ({pageName}) => {
 				alignContent: 'center',
 			}}>
       <Text style={{ fontSize: 30, fontWeight: '500', color: 'white'}}>{pageName}</Text>
-			<HeaderButtonMenu />
+			{/* <HeaderButtonMenu /> */}
     </SafeAreaView>
   )
 }

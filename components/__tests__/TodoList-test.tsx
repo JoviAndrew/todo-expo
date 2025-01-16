@@ -2,7 +2,7 @@ import React from 'react'
 import { render, screen, waitFor } from '@testing-library/react-native'
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
-import Index from '@/app/(app)'
+import Index from '@/app/home'
 
 jest.mock('expo-font')
 

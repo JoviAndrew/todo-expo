@@ -34,8 +34,8 @@ export default function RootLayout() {
       <PersistGate loading={null} persistor={MainStore.persistor}>
         <SessionProvider>
           <Stack>
-            <Stack.Screen name="(app)" options={{ headerShown: false }} />
-            <Stack.Screen name="sign-in" options={{ headerShown: false }} />
+            <Stack.Screen name="index" options={{ headerShown: false }} />
+            <Stack.Screen name="home" options={{ headerShown: false }} />
             <Stack.Screen name="register" options={{ headerShown: false }} />
           </Stack>
           <StatusBar style="auto" />
