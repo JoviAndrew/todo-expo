@@ -21,7 +21,7 @@
 ## Current and Future Plan
 |                |Current                        |Future                       |
 |----------------|-------------------------------|-----------------------------|
-|Authentication|Register can be done multiple times |Will be limited to one time            |
+|Authentication|Local Expo Authentication |Local Expo Authentication |
 |Connection          |Offline            |Offline           |
 |To do list content          |Description|Time, Priority, and Tags|
 |Special features         |none|Filters and sort|
