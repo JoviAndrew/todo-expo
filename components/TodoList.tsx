@@ -28,14 +28,15 @@ const TodoList: React.FC<Props> = ({data, index}) => {
 
   return (
 		<>
-			<TouchableOpacity onPress={() => setModalVisible(true)}>
+			<TouchableOpacity testID='todoTaskList' onPress={() => setModalVisible(true)}>
 				<View style={localStyles.container}>
 					<CheckBox
+						testID='checkboxButton'
 						checked={data.isDone}
 						onPress={setToDone}
 						containerStyle={localStyles.checkboxContainer}
 					/>
-					<Text style={[localStyles.description, data.isDone && localStyles.descriptionChecked]}>
+					<Text testID='todoTaskDesc' style={[localStyles.description, data.isDone && localStyles.descriptionChecked]}>
 						{data.description}
 					</Text>
 				</View>
@@ -93,18 +94,18 @@ const UpdateDeleteModal: React.FC<UpdateDelModalProps> = ({ closeModal, selected
 			{/* Modal Header */}
 			<View style={{backgroundColor: 'white', padding: 10}}>
 				<View style={{flexDirection: 'row', padding: 10}}>
-					<TouchableOpacity onPress={() => closeModal()}>
+					<TouchableOpacity testID='closeModalButton' onPress={() => closeModal()}>
 						<Entypo name="chevron-left" size={24} color="black" />
 					</TouchableOpacity>
 				</View>
-				<Text style={styles.titleText}>Add New Task</Text>
+				<Text style={styles.titleText}>Task Description</Text>
 				<View style={{marginVertical: 20}}>
-					<TextInput style={styles.multilineTextInput} placeholder='Add a description' multiline={true} numberOfLines={4} value={desc} onChangeText={setDesc} />
+					<TextInput testID='descriptionTextInput' style={styles.multilineTextInput} placeholder='Add a description' multiline={true} numberOfLines={4} value={desc} onChangeText={setDesc} />
 				</View>
-				<TouchableOpacity onPress={() => updateData()} style={styles.buttonPrimary}>
+				<TouchableOpacity testID='editButton' onPress={() => updateData()} style={styles.buttonPrimary}>
 					<Text style={styles.textButtonPrimary}>EDIT</Text>
 				</TouchableOpacity>
-				<TouchableOpacity onPress={() => deleteData()} style={styles.buttonDanger}>
+				<TouchableOpacity testID='deleteButton' onPress={() => deleteData()} style={styles.buttonDanger}>
 					<Text style={styles.textButtonPrimary}>DELETE</Text>
 				</TouchableOpacity>
 			</View>
