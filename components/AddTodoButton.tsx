@@ -7,11 +7,13 @@ import { useDispatch } from 'react-redux';
 import { insertList } from '../state/todo-redux'
 import HalfModal from './HalfModal';
 
+// Modal content component filled with form for user to fill task description
 const AddListModalContent: React.FC<{closeModal: () => void}> = ({ closeModal }) => {
 	const [desc, setDesc] = useState('')
 
 	const dispatch = useDispatch()
 
+	// Function to trigger redux action to save task to redux
 	const saveList = () => {
 		const tempData = {
 			description: desc
@@ -41,6 +43,7 @@ const AddListModalContent: React.FC<{closeModal: () => void}> = ({ closeModal })
 	)
 }
 
+// Add new task button
 const AddTodoButton: React.FC<any> = () => {
 	const [modalVisible, setModalVisible] = useState(false)
 

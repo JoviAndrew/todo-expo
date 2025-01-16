@@ -6,6 +6,7 @@ type Props = {
     closeModal: () => void
 }
 
+// Custome modal component that will allow users to close the modal when they press the backdrop
 const HalfModal: React.FC<Props> = ({children, closeModal}) => {
   return (
     <TouchableWithoutFeedback onPress={() => closeModal()}>

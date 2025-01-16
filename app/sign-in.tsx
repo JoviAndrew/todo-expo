@@ -5,6 +5,7 @@ import { Text, View, TextInput, TouchableOpacity } from 'react-native';
 import { useSession } from '../ctx';
 import styles from '@/style/style';
 
+// Sign in page
 export default function SignIn() {
 	const [password, setPassword] = useState('')
 	const [error, setError] = useState(false)
@@ -26,7 +27,7 @@ export default function SignIn() {
 			<View style={{marginBottom: 30}}>
 				<Text style={{ fontSize: 50, fontWeight: '300', textAlign: 'center' }}>to-do <Text style={{ color: '#8FBCE6'}}>app</Text></Text>
 			</View>
-			<TextInput style={styles.textInput} onChangeText={(e) => setPassword(e)} value={password} placeholder='Enter Password' secureTextEntry={true} autoCapitalize='none' />
+			<TextInput style={error ? styles.textInputDanger : styles.textInput} onChangeText={(e) => setPassword(e)} value={password} placeholder='Enter Password' secureTextEntry={true} autoCapitalize='none' />
 			<TouchableOpacity
 				onPress={() => login()}
 				style={styles.buttonPrimary}

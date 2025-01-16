@@ -18,10 +18,12 @@ type Props = {
 	index: number
 }
 
+// The to do list component that will be rendered inside flat list component in index page
 const TodoList: React.FC<Props> = ({data, index}) => {
 	const [modalVisible, setModalVisible] = useState(false)
 	const dispatch = useDispatch()
 
+	// Function to update task to done or not
 	const setToDone = () => {
 		dispatch(updateList({index, data: {...data, isDone: !data.isDone}}))
 	}
@@ -61,15 +63,18 @@ type UpdateDelModalProps = {
 	index: number
 }
 
+// Popup modal to handle delete and update feature
 const UpdateDeleteModal: React.FC<UpdateDelModalProps> = ({ closeModal, selectedData, index }) => {
 	const [desc, setDesc] = useState('')
 
 	const dispatch = useDispatch()
 
+	// Use effect did mount to set initial state based on props
 	useEffect(() => {
 		setDesc(selectedData.description)
 	}, [selectedData])
 
+	// Delete data function. Will add alert in the future to guard accidental press of delete button
 	const deleteData = () => {
 		const tempDataToDelete = {
 			index
@@ -78,6 +83,7 @@ const UpdateDeleteModal: React.FC<UpdateDelModalProps> = ({ closeModal, selected
 		closeModal()
 	}
 
+	// Update task description function that will trigger redux dispatch
 	const updateData = () => {
 		const tempDataToUpdate = {
 			data: {

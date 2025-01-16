@@ -14,7 +14,9 @@ type TodoProps = {
 	}]
 }
 
+// Main page of the application
 export default function Index() {
+	// Get todo data from redux
 	const todoData = useSelector((state: { todo: TodoProps }) => state.todo)
 
   return (

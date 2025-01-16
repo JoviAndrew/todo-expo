@@ -6,6 +6,7 @@ export type Props = {
   pageName: string;
 };
 
+// Main header component in index page
 const MainHeader: React.FC<Props> = ({pageName}) => {
   
   return (

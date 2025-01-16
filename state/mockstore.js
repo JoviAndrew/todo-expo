@@ -1,3 +1,7 @@
+/**
+ * This is only for testing purposes
+ */
+
 import { createStore } from 'redux'
 import {configureStore, combineReducers} from '@reduxjs/toolkit'
 

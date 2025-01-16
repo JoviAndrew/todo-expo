@@ -40,6 +40,22 @@ const styles = StyleSheet.create({
 		elevation: 3, // For Android shadow
 		marginTop: 5
 	},
+	textInputDanger: {
+		width: '100%',
+		backgroundColor: 'white',
+		borderColor: 'red',
+		borderWidth: 1,
+		borderRadius: 10,
+		padding: 15,
+		textAlignVertical: 'top', // Ensures the text starts from the top
+		fontSize: 16,
+		shadowColor: '#000', // Optional for shadow effect
+		shadowOpacity: 0.1,
+		shadowRadius: 4,
+		shadowOffset: { width: 0, height: 2 },
+		elevation: 3, // For Android shadow
+		marginTop: 5
+	},
 	multilineTextInput: {
 		width: '100%',
 		minHeight: 100, // Minimum height for the input box
