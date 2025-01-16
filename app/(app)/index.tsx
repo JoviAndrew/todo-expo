@@ -1,18 +1,28 @@
-import { Text, View } from 'react-native';
+import { FlatList, SafeAreaView, View } from 'react-native';
+import { useSelector } from 'react-redux'
 
-import { useSession } from '../../ctx';
+import MainHeader from '@/components/MainHeader';
+import AddTodoButton from '@/components/AddTodoButton';
+
+import { todoListData } from '../../state/todo-redux'
+import TodoList from '@/components/TodoList';
 
 export default function Index() {
-  const { signOut } = useSession();
+	const todoData = useSelector(todoListData)
+
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text
-        onPress={() => {
-          // The `app/(app)/_layout.tsx` will redirect to the sign-in screen.
-          signOut();
-        }}>
-        Sign Out
-      </Text>
-    </View>
-  );
+    <SafeAreaView style={{ flex: 1 }}>
+			<MainHeader pageName='To Do List' />
+			<View style={{ paddingHorizontal: 10}}>
+				<AddTodoButton />
+			</View>
+			<FlatList
+				data={todoData}
+				renderItem={({item, index}) => (
+					<TodoList data={item} index={index} />	
+				)}
+				keyExtractor={item => `to do list ${item.description}`}
+			/>
+    </SafeAreaView>
+  )
 }
