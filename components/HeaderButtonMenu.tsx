@@ -1,39 +1,26 @@
-import React, { useState } from 'react'
-import { View, Text, TouchableOpacity, Dimensions } from 'react-native'
-import { router } from 'expo-router';
+import React from 'react'
+import { View, TouchableOpacity, Alert } from 'react-native'
 
-import Entypo from '@expo/vector-icons/Entypo';
-import { useSession } from '@/ctx';
-
-const HeaderMenu: React.FC = () => {
-	const { signOut } = useSession()
-	return (
-		<View style={{
-			position: 'absolute',
-			top: 40,
-			zIndex: 100,
-			width: Dimensions.get('screen').width * 0.2,
-			backgroundColor: 'white',
-			padding: 10,
-			right: -10
-		}}>
-			{/* <TouchableOpacity><Text>Change Passkey</Text></TouchableOpacity> */}
-			<TouchableOpacity onPress={() => signOut()}><Text>Sign Out</Text></TouchableOpacity>
-		</View>
-	)
-}
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
+import { useSession } from '@/ctx'
 
 export default function HeaderButtonMenu() {
-	const [showMenu, setShowMenu] = useState(false)
+	const { signOut } = useSession()
+
+	const onPressSignout = () => {
+		Alert.alert('Sign Out', 'Are you sure you want to sign out?', [
+      {
+        text: 'Cancel'
+      },
+      {text: 'Yes', onPress: () => signOut()},
+    ]);
+	}
+
   return (
     <View style={{alignSelf: 'center'}}>
-      <TouchableOpacity onPress={() => setShowMenu(!showMenu)}>
-        <Entypo name="dots-three-vertical" size={24} color="white" />
+      <TouchableOpacity onPress={() => onPressSignout()}>
+				<MaterialCommunityIcons name="exit-to-app" size={24} color="white" />
       </TouchableOpacity>
-			{showMenu
-			? <HeaderMenu />
-			: null
-			}
     </View>
   )
 }
